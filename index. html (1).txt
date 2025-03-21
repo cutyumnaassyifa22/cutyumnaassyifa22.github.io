@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        a {
+            color: #9370DB; /* Warna ungu untuk link */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> | 
+        <a href="friends.html">Friends</a>
+    </nav>
+
+    <h1>Nama: Cut Yumna Assyifa</h1>
+    <p>
+        Deskripsi Diri: Nama saya Cut Yumna Assyifa, lahir di Lhokseumawe. 
+        Saya lulusan dari MAS Almuslim dan saat ini saya adalah 
+        seorang mahasiswa Politeknik Negeri Lhokseumawe. Saya seorang Mahasiswa 
+        Teknik Informatika yang bersemangat dalam membangun pengalaman digital 
+        yang menarik dan fungsional. Saat ini, saya fokus pada pengembangan 
+        front-end menggunakan HTML, CSS, dan JavaScript.
+    </p>
+</body>
+</html>
