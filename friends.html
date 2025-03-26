@@ -6,34 +6,40 @@
     <title>Friends Page</title>
     <style>
         body {
-            background-color: black; /* Latar belakang hitam */
-            color: white; /* Warna teks default */
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
         }
         nav a {
-            color: purple; /* Warna ungu untuk link navigasi */
+            color: #ff66cc; /* Warna pink seperti Home */
             text-decoration: none;
             font-weight: bold;
         }
         nav a:hover {
             text-decoration: underline;
         }
+        nav a:visited {
+            color: #ff66cc; /* Supaya warna tetap sama setelah ditekan */
+        }
         h1, p {
             color: white;
         }
         ul {
-            list-style-type: none; /* Hilangkan bullet point */
+            list-style-type: none;
             padding: 0;
         }
         ul li {
-            color: white; /* Warna putih untuk nomor */
+            color: white;
         }
         ul li a {
-            color: purple; /* Warna ungu untuk nama teman */
+            color: purple;
             text-decoration: none;
         }
         ul li a:hover {
             text-decoration: underline;
+        }
+        ul li a:visited {
+            color: purple; /* Supaya warna tetap ungu setelah ditekan */
         }
     </style>
 </head>
