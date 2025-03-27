@@ -1,17 +1,18 @@
 nav {
     text-align: left;
-    padding-bottom: 5px; /* Biar ada sedikit ruang sebelum garis */
-    border-bottom: 2px solid #d1a3ff; /* Garis bawah menyambung */
-    display: inline-block; /* Biar lebarnya hanya sesuai teks */
+    padding: 10px;
 }
 
 nav a {
-    text-decoration: none;
-    color: #d1a3ff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px; /* Ketebalan garis bawah */
+    text-decoration-color: #d1a3ff; /* Warna garis bawah */
+    text-underline-offset: 3px; /* Jarak garis dari teks */
+    color: #d1a3ff; /* Warna teks */
     font-weight: bold;
     margin-right: 10px;
 }
 
 nav a:last-child {
-    margin-right: 0; /* Hapus margin kanan untuk link terakhir */
+    margin-right: 0;
 }
