@@ -1,18 +1,17 @@
 nav {
     text-align: left;
-    padding: 10px;
-    border-bottom: 2px solid #d6a3ff; /* Garis bawah menyambung di seluruh navbar */
-    margin-bottom: 15px; /* Jarak dengan konten di bawah */
-    display: inline-block; /* Biar lebarnya hanya sebesar teks */
+    padding-bottom: 5px; /* Biar ada sedikit ruang sebelum garis */
+    border-bottom: 2px solid #d1a3ff; /* Garis bawah menyambung */
+    display: inline-block; /* Biar lebarnya hanya sesuai teks */
 }
 
 nav a {
-    text-decoration: none; /* Hilangkan garis bawah di setiap link */
-    color: #d1a3ff; 
-    margin-right: 10px;
+    text-decoration: none;
+    color: #d1a3ff;
     font-weight: bold;
+    margin-right: 10px;
 }
 
-nav a:hover {
-    text-decoration: underline; /* Garis bawah saat di-hover */
+nav a:last-child {
+    margin-right: 0; /* Hapus margin kanan untuk link terakhir */
 }
