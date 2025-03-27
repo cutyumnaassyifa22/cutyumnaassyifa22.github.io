@@ -1,20 +1,53 @@
+/* Style Umum */
 body {
+    font-family: Arial, sans-serif;
     background-color: black;
     color: white;
-    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Navigasi */
+nav {
+    background-color: #222;
+    padding: 10px;
 }
 
 nav a {
-    color: #c2a2df;
+    color: #d6b4fc; /* Warna ungu */
     text-decoration: none;
-    font-size: 18px;
     font-weight: bold;
+    margin: 0 10px;
 }
 
 nav a:hover {
+    color: #fff; /* Warna putih saat hover */
+}
+
+nav a.active {
+    color: #b399ff; /* Warna ungu muda untuk halaman aktif */
     text-decoration: underline;
 }
 
-h1 {
-    color: #c2a2df;
+/* List Styling untuk Friends Page */
+ol {
+    text-align: left;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+ol li {
+    color: white; /* Warna nomor tetap putih */
+    font-size: 18px;
+}
+
+/* Warna Nama Teman */
+ol li a {
+    color: #d6b4fc; /* Warna ungu */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ol li a:hover {
+    color: #fff; /* Warna putih saat hover */
+    text-decoration: underline;
 }
