@@ -1,13 +1,15 @@
 nav {
     text-align: left;
     padding: 10px;
+    border-bottom: 2px solid #d6a3ff; /* Tambahkan garis bawah navbar */
+    margin-bottom: 15px; /* Biar ada jarak dari konten di bawahnya */
 }
 
 nav a {
     text-decoration: none;
-    color: #d1a3ff; /* Warna ungu */
-    font-weight: normal;
-    margin-right: 5px;
+    color: #d1a3ff; /* Warna ungu sesuai contoh */
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 nav a:hover {
