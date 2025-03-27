@@ -5,14 +5,10 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #d1a3ff;
+    color: #d1a3ff; /* Warna ungu */
     font-weight: bold;
-    font-size: 16px;
-    margin-right: 5px; /* Mengatur spasi antar teks */
-}
-
-nav a:last-child {
-    margin-right: 0; /* Hapus margin kanan untuk elemen terakhir */
+    margin-right: 5px; /* Sesuaikan jarak antar teks */
+    font-size: 16px; /* Sesuaikan ukuran font */
 }
 
 nav a:hover {
