@@ -5,9 +5,9 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: #d1a3ff; /* Warna ungu sesuai contoh */
-    margin-right: 10px;
-    font-weight: bold;
+    color: #d1a3ff; /* Warna ungu */
+    font-weight: normal;
+    margin-right: 5px;
 }
 
 nav a:hover {
