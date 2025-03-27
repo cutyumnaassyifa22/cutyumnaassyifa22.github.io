@@ -1,17 +1,18 @@
 nav {
     text-align: left;
     padding: 10px;
-    border-bottom: 2px solid #d6a3ff; /* Tambahkan garis bawah navbar */
-    margin-bottom: 15px; /* Biar ada jarak dari konten di bawahnya */
+    border-bottom: 2px solid #d6a3ff; /* Garis bawah menyambung di seluruh navbar */
+    margin-bottom: 15px; /* Jarak dengan konten di bawah */
+    display: inline-block; /* Biar lebarnya hanya sebesar teks */
 }
 
 nav a {
-    text-decoration: none;
-    color: #d1a3ff; /* Warna ungu sesuai contoh */
+    text-decoration: none; /* Hilangkan garis bawah di setiap link */
+    color: #d1a3ff; 
     margin-right: 10px;
     font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Garis bawah saat di-hover */
 }
