@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blog</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
       margin: 20px;
     }
-    a {
+    nav a {
+      margin-right: 15px;
       color: purple;
       text-decoration: none;
     }
-    a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
-    h1 {
-      color: #333;
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    p {
-      text-align: justify;
+    li {
+      margin-bottom: 15px;
     }
-    nav a {
-      margin-right: 20px;
-    }
-    /* Style for sections */
-    .section {
-      display: none;
-    }
-    .active {
-      display: block;
+    .materi {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
     }
   </style>
 </head>
@@ -48,93 +44,80 @@
 
   <ul>
     <li>
-      <a href="javascript:void(0)" onclick="showSection('section1')">HTML Link and Lists</a>
+      <a href="#" onclick="tampilkanMateri('linklists')">HTML Link and Lists</a>
       <p>20 Mar 2025</p>
       <p>Penjelasan tentang link dan list pada HTML</p>
-      <div id="section1" class="section">
-        <h2>HTML Link and Lists</h2>
-        <p>HTML Links digunakan untuk membuat tautan antara halaman-halaman web. Tautan ini diwakili oleh tag <code>&lt;a&gt;</code>. Contoh dasar dari HTML Link adalah:</p>
-        <pre><code>&lt;a href="https://www.example.com"&gt;Kunjungi Example&lt;/a&gt;</code></pre>
-        <p>Di sini, <code>href</code> adalah atribut yang menentukan alamat URL tujuan. Tautan ini dapat berupa link internal (ke halaman lain dalam situs yang sama) atau eksternal (ke situs lain).</p>
-        <p>HTML Lists digunakan untuk mengelompokkan item dalam urutan tertentu. Ada dua jenis utama: <strong>unordered list</strong> dan <strong>ordered list</strong>.</p>
-        <ul>
-          <li>Unordered list menggunakan tag <code>&lt;ul&gt;</code> dan item ditandai dengan tag <code>&lt;li&gt;</code>.</li>
-          <li>Ordered list menggunakan tag <code>&lt;ol&gt;</code>, dan itemnya juga ditandai dengan <code>&lt;li&gt;</code>.</li>
-        </ul>
-      </div>
     </li>
-
     <li>
-      <a href="javascript:void(0)" onclick="showSection('section2')">Layout dan Navigation</a>
+      <a href="#" onclick="tampilkanMateri('layoutnav')">Layout dan Navigation</a>
       <p>13 Mar 2025</p>
       <p>Penjelasan tentang Layout dan Navigation</p>
-      <div id="section2" class="section">
-        <h2>Layout dan Navigation</h2>
-        <p>Layout dan navigasi penting dalam membangun sebuah website yang terstruktur dengan baik. Layout mengacu pada bagaimana elemen-elemen dalam halaman web ditempatkan dan diatur. Navigasi mengacu pada cara pengguna dapat berpindah antar halaman atau bagian di dalam website.</p>
-        <p>Contoh dasar penggunaan layout dengan HTML dapat dilakukan dengan tag <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, dan <code>&lt;footer&gt;</code>.</p>
-        <pre><code>&lt;header&gt;Ini adalah header&lt;/header&gt;</code></pre>
-        <pre><code>&lt;nav&gt;Ini adalah navigasi&lt;/nav&gt;</code></pre>
-        <pre><code>&lt;section&gt;Konten utama halaman&lt;/section&gt;</code></pre>
-        <pre><code>&lt;footer&gt;Footer halaman&lt;/footer&gt;</code></pre>
-      </div>
     </li>
-
     <li>
-      <a href="javascript:void(0)" onclick="showSection('section3')">Markdown</a>
+      <a href="#" onclick="tampilkanMateri('markdown')">Markdown</a>
       <p>06 Mar 2025</p>
       <p>Penjelasan tentang Markdown</p>
-      <div id="section3" class="section">
-        <h2>Markdown</h2>
-        <p>Markdown adalah bahasa markup ringan yang digunakan untuk menulis teks yang dapat dengan mudah dikonversi menjadi HTML. Markdown lebih mudah dibaca dan ditulis daripada HTML biasa, dan banyak digunakan dalam dokumentasi, blog, dan forum.</p>
-        <p>Contoh penulisan Markdown:</p>
-        <pre><code># Judul 1
-## Judul 2
-- Item 1
-- Item 2
-[Link ke Google](https://www.google.com)
-</code></pre>
-        <p>Markdown memungkinkan kamu menulis teks dengan format yang lebih sederhana dan lebih bersih daripada HTML. Setiap heading diawali dengan tanda pagar (#), dan daftar dimulai dengan tanda minus (-).</p>
-      </div>
     </li>
-
     <li>
-      <a href="javascript:void(0)" onclick="showSection('section4')">Menginstal Ruby dan Jekyll</a>
+      <a href="#" onclick="tampilkanMateri('rubyjekyll')">Menginstal Ruby dan Jekyll</a>
       <p>20 Feb 2025</p>
       <p>Penjelasan tentang instalasi Ruby dan Jekyll</p>
-      <div id="section4" class="section">
-        <h2>Menginstal Ruby dan Jekyll</h2>
-        <p>Ruby adalah bahasa pemrograman yang digunakan oleh Jekyll, yang merupakan framework statis untuk membuat situs web. Untuk memulai, kamu perlu menginstal Ruby terlebih dahulu.</p>
-        <p>Langkah-langkah untuk menginstal Ruby dan Jekyll di sistem kamu:</p>
-        <ol>
-          <li>Unduh dan instal Ruby dari situs resmi Ruby: <a href="https://www.ruby-lang.org/en/documentation/installation/">https://www.ruby-lang.org/en/documentation/installation/</a></li>
-          <li>Setelah Ruby terinstal, buka terminal atau command prompt dan jalankan perintah berikut untuk menginstal Jekyll:</li>
-          <pre><code>gem install jekyll bundler</code></pre>
-          <li>Setelah instalasi selesai, kamu dapat membuat proyek Jekyll baru dengan perintah:</li>
-          <pre><code>jekyll new my-awesome-site</code></pre>
-          <li>Masuk ke direktori proyek Jekyll:</li>
-          <pre><code>cd my-awesome-site</code></pre>
-          <li>Jalankan situs Jekyll lokal dengan perintah:</li>
-          <pre><code>bundle exec jekyll serve</code></pre>
-        </ol>
-        <p>Setelah itu, situs Jekyll kamu akan tersedia di <a href="http://localhost:4000">http://localhost:4000</a>.</p>
-      </div>
     </li>
-
   </ul>
 
-  <script>
-    function showSection(sectionId) {
-      // Menyembunyikan semua section
-      var sections = document.querySelectorAll('.section');
-      sections.forEach(function(section) {
-        section.classList.remove('active');
-      });
+  <div id="materi" class="materi">
+    <p>Klik salah satu materi di atas untuk menampilkannya di sini.</p>
+  </div>
 
-      // Menampilkan section yang diklik
-      var section = document.getElementById(sectionId);
-      section.classList.add('active');
+  <script>
+    function tampilkanMateri(topik) {
+      var konten = {
+        linklists: `
+          <h2>HTML Link and Lists</h2>
+          <p><strong>Link HTML</strong> menggunakan tag &lt;a&gt; untuk membuat tautan ke halaman lain.</p>
+          <pre><code>&lt;a href="https://www.google.com"&gt;Kunjungi Google&lt;/a&gt;</code></pre>
+          <p><strong>List HTML</strong> digunakan untuk membuat daftar:</p>
+          <ul>
+            <li><strong>Unordered List</strong>: &lt;ul&gt;</li>
+            <li><strong>Ordered List</strong>: &lt;ol&gt;</li>
+            <li><strong>List Item</strong>: &lt;li&gt;</li>
+          </ul>
+        `,
+        layoutnav: `
+          <h2>Layout dan Navigation</h2>
+          <p>Layout menentukan struktur halaman HTML, biasanya menggunakan tag seperti &lt;header&gt;, &lt;nav&gt;, &lt;section&gt;, &lt;footer&gt;.</p>
+          <p>Navigation adalah bagian dari layout yang mengarahkan pengguna ke halaman lain menggunakan tautan.</p>
+          <pre><code>&lt;nav&gt;
+  &lt;a href="home.html"&gt;Home&lt;/a&gt;
+  &lt;a href="about.html"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+        `,
+        markdown: `
+          <h2>Markdown</h2>
+          <p>Markdown adalah bahasa markup sederhana yang digunakan untuk menulis dokumen dengan cepat.</p>
+          <pre><code># Judul Besar
+## Subjudul
+- Item 1
+- Item 2
+
+[Link ke Google](https://www.google.com)</code></pre>
+        `,
+        rubyjekyll: `
+          <h2>Menginstal Ruby dan Jekyll</h2>
+          <p>Langkah-langkah instalasi:</p>
+          <ol>
+            <li>Install Ruby dari situs resmi ruby-lang.org</li>
+            <li>Buka terminal dan jalankan: <code>gem install jekyll bundler</code></li>
+            <li>Buat project: <code>jekyll new nama-projek</code></li>
+            <li>Jalankan server: <code>bundle exec jekyll serve</code></li>
+          </ol>
+          <p>Lalu akses di: <code>http://localhost:4000</code></p>
+        `
+      };
+
+      document.getElementById("materi").innerHTML = konten[topik];
     }
   </script>
 
 </body>
-        </html>
+</html>
