@@ -2,82 +2,71 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog</title>
+  <title>Blog</title>
   <style>
     body {
       background-color: #000;
       color: white;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       padding: 20px;
     }
     nav a {
       color: violet;
-      margin-right: 15px;
+      font-weight: bold;
+      margin-right: 20px;
       text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      font-size: 18px;
     }
     h1 {
-      color: white;
+      color: violet;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .judul {
+      color: violet;
+      font-size: 20px;
+      font-weight: bold;
       margin-top: 30px;
     }
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 25px;
-    }
-    li a {
-      color: violet;
-      font-weight: bold;
-      text-decoration: underline;
-      font-size: 16px;
-    }
     .tanggal {
-      margin: 5px 0;
       color: #ccc;
+      margin: 5px 0;
     }
     .isi {
-      margin-top: 5px;
-      color: #eee;
+      margin-bottom: 20px;
+    }
+    hr {
+      border: 1px solid #444;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html">home</a>
-    <a href="friends.html">friends</a>
-    <a href="blog.html">blog</a>
+    <a href="index.html">Home</a>
+    <a href="friends.html">Friends</a>
+    <a href="blog.html">Blog</a>
   </nav>
 
-  <h1>blog</h1>
+  <h1>Blog</h1>
+  <hr>
 
-  <ul>
-    <li>
-      <a href="#">HTML Link and Lists</a>
-      <div class="tanggal">20 Mar 2025</div>
-      <div class="isi">Penjelasan tentang link dan list pada HTML, seperti cara menggunakan tag &lt;a&gt; untuk hyperlink dan tag &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; untuk membuat daftar.</div>
-    </li>
-    <li>
-      <a href="#">Layout dan Navigation</a>
-      <div class="tanggal">13 Mar 2025</div>
-      <div class="isi">Penjelasan tentang cara menyusun layout dengan HTML dan CSS serta membuat navigasi antar halaman menggunakan tag &lt;nav&gt; dan hyperlink.</div>
-    </li>
-    <li>
-      <a href="#">Markdown</a>
-      <div class="tanggal">06 Mar 2025</div>
-      <div class="isi">Markdown adalah bahasa ringan untuk format teks. Dipakai di GitHub dan Jekyll untuk menulis konten dengan cara yang sederhana.</div>
-    </li>
-    <li>
-      <a href="#">Menginstall Ruby dan Jekyll</a>
-      <div class="tanggal">20 Feb 2025</div>
-      <div class="isi">Langkah-langkah instalasi Ruby, RubyGems, dan Jekyll untuk membuat blog statis lokal dan upload ke GitHub Pages.</div>
-    </li>
-  </ul>
+  <div class="judul">HTML Link and Lists</div>
+  <div class="tanggal">20 Mar 2025</div>
+  <div class="isi">Penjelasan tentang link dan list pada HTML, seperti penggunaan tag &lt;a&gt; untuk membuat tautan, dan tag &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; untuk membuat daftar.</div>
+
+  <div class="judul">Layout dan Navigation</div>
+  <div class="tanggal">13 Mar 2025</div>
+  <div class="isi">Penjelasan tentang Layout dan Navigation, termasuk penggunaan elemen seperti &lt;div&gt;, &lt;header&gt;, &lt;nav&gt;, dan bagaimana mengatur layout dengan CSS.</div>
+
+  <div class="judul">Markdown</div>
+  <div class="tanggal">06 Mar 2025</div>
+  <div class="isi">Penjelasan tentang Markdown, yaitu bahasa markup ringan yang digunakan untuk menulis konten di GitHub dan Jekyll dengan simbol-simbol sederhana.</div>
+
+  <div class="judul">Menginstal Ruby dan Jekyll</div>
+  <div class="tanggal">20 Feb 2025</div>
+  <div class="isi">Penjelasan tentang cara menginstal Ruby, RubyGems, dan Jekyll untuk membuat dan menjalankan blog statis secara lokal maupun di GitHub Pages.</div>
 
 </body>
 </html>
