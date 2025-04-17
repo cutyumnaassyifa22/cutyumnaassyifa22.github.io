@@ -1,37 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    nav a {
+      margin-right: 15px;
+      text-transform: capitalize;
+      color: white;
+      text-decoration: none;
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+    }
+    .judul {
+      color: #b19cd9;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-top: 20px;
+    }
+    .tanggal {
+      margin-bottom: 5px;
+    }
+    .isi {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .card {
+      border: 1px solid white;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">home</a>
-        <a href="friends.html">friends</a>
-        <a href="blog.html">blog</a>
-    </nav>
+  <nav>
+    <a href="index.html">home</a>
+    <a href="friends.html">friends</a>
+    <a href="blog.html">blog</a>
+  </nav>
 
   <h1>Blog</h1>
   <hr>
 
-  <div class="judul">HTML Link and Lists</div>
+  <div class="judul" onclick="toggleIsi(this)">HTML Link and Lists</div>
   <div class="tanggal">20 Mar 2025</div>
   <div class="isi">Penjelasan tentang link dan list pada HTML, seperti penggunaan tag &lt;a&gt; untuk membuat tautan, dan tag &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; untuk membuat daftar.</div>
 
-  <div class="judul">Layout dan Navigation</div>
+  <div class="judul" onclick="toggleIsi(this)">Layout dan Navigation</div>
   <div class="tanggal">13 Mar 2025</div>
   <div class="isi">Penjelasan tentang Layout dan Navigation, termasuk penggunaan elemen seperti &lt;div&gt;, &lt;header&gt;, &lt;nav&gt;, dan bagaimana mengatur layout dengan CSS.</div>
 
-  <div class="judul">Markdown</div>
+  <div class="judul" onclick="toggleIsi(this)">Markdown</div>
   <div class="tanggal">06 Mar 2025</div>
   <div class="isi">Penjelasan tentang Markdown, yaitu bahasa markup ringan yang digunakan untuk menulis konten di GitHub dan Jekyll dengan simbol-simbol sederhana.</div>
 
-  <div class="judul">Menginstal Ruby dan Jekyll</div>
+  <div class="judul" onclick="toggleIsi(this)">Menginstal Ruby dan Jekyll</div>
   <div class="tanggal">20 Feb 2025</div>
   <div class="isi">Penjelasan tentang cara menginstal Ruby, RubyGems, dan Jekyll untuk membuat dan menjalankan blog statis secara lokal maupun di GitHub Pages.</div>
+
+  <div class="card">
+    Klik salah satu materi di atas untuk menampilkannya di sini.
+  </div>
+
+  <script>
+    function toggleIsi(element) {
+      const isi = element.nextElementSibling.nextElementSibling;
+      isi.style.display = isi.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 
 </body>
 </html>
