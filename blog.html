@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: sans-serif;
       padding: 20px;
-      background-color: #fff;
+      background: #fff;
       color: #333;
-    }
-
-    nav {
-      margin-bottom: 30px;
     }
 
     nav a {
@@ -21,16 +17,13 @@
       text-decoration: none;
       color: purple;
       font-weight: bold;
-      font-size: 18px;
     }
 
     nav a:hover {
       text-decoration: underline;
-      color: darkviolet;
     }
 
     h1 {
-      font-size: 32px;
       color: purple;
     }
 
@@ -40,23 +33,29 @@
     }
 
     .judul {
-      color: purple;
       cursor: pointer;
-      margin: 20px 0 5px;
+      color: purple;
       font-size: 20px;
+      margin-bottom: 5px;
     }
 
     .judul:hover {
       color: darkviolet;
     }
 
+    .tanggal {
+      color: gray;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
     .konten {
       display: none;
-      margin-top: 10px;
+      margin-bottom: 25px;
+      background: #f9f9f9;
       padding: 10px;
       border: 1px solid #ddd;
-      background-color: #f9f9f9;
-      border-radius: 6px;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -72,35 +71,32 @@
 
   <div class="materi">
     <div>
-      <h3 class="judul" onclick="toggle('link')">HTML Link and Lists</h3>
-      <div class="konten" id="link">
-        <p><strong>Link HTML</strong> digunakan untuk membuat tautan ke halaman lain menggunakan tag <code>&lt;a&gt;</code>:</p>
+      <div class="judul" onclick="toggle('konten1')">HTML Link and Lists</div>
+      <div class="tanggal">20 Mar 2025</div>
+      <div class="konten" id="konten1">
+        <p><strong>HTML Link</strong> digunakan untuk membuat tautan ke halaman lain dengan tag <code>&lt;a&gt;</code>:</p>
         <pre>&lt;a href="https://example.com"&gt;Klik di sini&lt;/a&gt;</pre>
-        <p><strong>List HTML</strong> adalah daftar yang bisa berupa:</p>
+        <p><strong>HTML Lists</strong> digunakan untuk menampilkan daftar item:</p>
         <ul>
-          <li><code>&lt;ul&gt;</code> untuk daftar tidak berurutan (bullet)</li>
-          <li><code>&lt;ol&gt;</code> untuk daftar berurutan (angka)</li>
+          <li><code>&lt;ul&gt;</code>: daftar tidak berurutan (bullet)</li>
+          <li><code>&lt;ol&gt;</code>: daftar berurutan (angka)</li>
+          <li><code>&lt;li&gt;</code>: item di dalam list</li>
         </ul>
-        <pre>
-&lt;ul&gt;
-  &lt;li&gt;Item 1&lt;/li&gt;
-  &lt;li&gt;Item 2&lt;/li&gt;
-&lt;/ul&gt;
-        </pre>
       </div>
     </div>
 
     <div>
-      <h3 class="judul" onclick="toggle('layout')">Layout dan Navigation</h3>
-      <div class="konten" id="layout">
-        <p><strong>Layout</strong> digunakan untuk menyusun struktur halaman:</p>
+      <div class="judul" onclick="toggle('konten2')">Layout dan Navigation</div>
+      <div class="tanggal">13 Mar 2025</div>
+      <div class="konten" id="konten2">
+        <p><strong>Layout</strong> menyusun bagian-bagian HTML seperti:</p>
         <ul>
-          <li><code>&lt;header&gt;</code> - bagian atas</li>
-          <li><code>&lt;nav&gt;</code> - navigasi</li>
-          <li><code>&lt;main&gt;</code> - konten utama</li>
-          <li><code>&lt;footer&gt;</code> - kaki halaman</li>
+          <li><code>&lt;header&gt;</code>: bagian atas</li>
+          <li><code>&lt;nav&gt;</code>: menu navigasi</li>
+          <li><code>&lt;main&gt;</code>: isi utama</li>
+          <li><code>&lt;footer&gt;</code>: bagian bawah</li>
         </ul>
-        <p><strong>Navigation</strong> biasanya ditulis seperti ini:</p>
+        <p><strong>Navigation</strong> menggunakan link <code>&lt;a&gt;</code> untuk berpindah antar halaman:</p>
         <pre>
 &lt;nav&gt;
   &lt;a href="index.html"&gt;Home&lt;/a&gt;
@@ -111,32 +107,35 @@
     </div>
 
     <div>
-      <h3 class="judul" onclick="toggle('markdown')">Markdown</h3>
-      <div class="konten" id="markdown">
-        <p><strong>Markdown</strong> adalah bahasa ringan untuk menulis dokumen web. Contoh:</p>
+      <div class="judul" onclick="toggle('konten3')">Markdown</div>
+      <div class="tanggal">06 Mar 2025</div>
+      <div class="konten" id="konten3">
+        <p><strong>Markdown</strong> adalah bahasa ringan untuk membuat format dokumen.</p>
+        <p>Contoh sintaks Markdown:</p>
         <pre>
-# Judul Besar
+# Judul
 ## Subjudul
 - List item
-- List item
-[Link](https://google.com)
+- List lainnya
+[Link](https://example.com)
         </pre>
-        <p>Markdown sering dipakai di GitHub (README.md), dokumentasi, dll.</p>
+        <p>Markdown sering digunakan di GitHub README.md dan dokumentasi lainnya.</p>
       </div>
     </div>
 
     <div>
-      <h3 class="judul" onclick="toggle('ruby')">Menginstal Ruby dan Jekyll</h3>
-      <div class="konten" id="ruby">
-        <p><strong>Langkah Instalasi Ruby dan Jekyll:</strong></p>
+      <div class="judul" onclick="toggle('konten4')">Menginstall Ruby dan Jekyll</div>
+      <div class="tanggal">20 Feb 2025</div>
+      <div class="konten" id="konten4">
+        <p><strong>Langkah instalasi Ruby & Jekyll:</strong></p>
         <ol>
-          <li>Download Ruby: <a href="https://rubyinstaller.org">rubyinstaller.org</a></li>
-          <li>Buka terminal: <code>gem install jekyll bundler</code></li>
-          <li>Mulai proyek: <code>jekyll new mysite</code></li>
-          <li>Masuk folder: <code>cd mysite</code></li>
-          <li>Jalankan lokal: <code>bundle exec jekyll serve</code></li>
+          <li>Download Ruby dari <a href="https://rubyinstaller.org">rubyinstaller.org</a></li>
+          <li>Install bundler dan jekyll: <code>gem install bundler jekyll</code></li>
+          <li>Buat proyek baru: <code>jekyll new mysite</code></li>
+          <li>Masuk folder proyek: <code>cd mysite</code></li>
+          <li>Jalankan: <code>bundle exec jekyll serve</code></li>
         </ol>
-        <p>Buka di browser: <code>http://localhost:4000</code></p>
+        <p>Lalu akses di browser: <code>http://localhost:4000</code></p>
       </div>
     </div>
   </div>
@@ -144,11 +143,7 @@
   <script>
     function toggle(id) {
       const konten = document.getElementById(id);
-      if (konten.style.display === "block") {
-        konten.style.display = "none";
-      } else {
-        konten.style.display = "block";
-      }
+      konten.style.display = konten.style.display === "block" ? "none" : "block";
     }
   </script>
 
