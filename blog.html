@@ -6,37 +6,57 @@
   <title>Blog</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       padding: 20px;
+      background-color: #fff;
+      color: #333;
     }
 
     nav {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     nav a {
       margin-right: 20px;
       text-decoration: none;
       color: purple;
+      font-weight: bold;
+      font-size: 18px;
     }
 
     nav a:hover {
       text-decoration: underline;
+      color: darkviolet;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      margin-bottom: 20px;
+    h1 {
+      font-size: 32px;
+      color: purple;
     }
 
     .materi {
-      margin-top: 30px;
-      border-top: 2px solid #ccc;
+      border-top: 1px solid #ccc;
       padding-top: 20px;
+    }
+
+    .judul {
+      color: purple;
+      cursor: pointer;
+      margin: 20px 0 5px;
+      font-size: 20px;
+    }
+
+    .judul:hover {
+      color: darkviolet;
+    }
+
+    .konten {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -50,81 +70,85 @@
 
   <h1>Blog</h1>
 
-  <ul>
-    <li>
-      <a href="#" onclick="tampilkan('link')">HTML Link and Lists</a>
-      <p>20 Mar 2025</p>
-    </li>
-    <li>
-      <a href="#" onclick="tampilkan('layout')">Layout dan Navigation</a>
-      <p>13 Mar 2025</p>
-    </li>
-    <li>
-      <a href="#" onclick="tampilkan('markdown')">Markdown</a>
-      <p>06 Mar 2025</p>
-    </li>
-    <li>
-      <a href="#" onclick="tampilkan('ruby')">Menginstal Ruby dan Jekyll</a>
-      <p>20 Feb 2025</p>
-    </li>
-  </ul>
-
-  <div class="materi" id="isiMateri">
-    <p>Klik salah satu materi di atas untuk menampilkannya di sini.</p>
-  </div>
-
-  <script>
-    function tampilkan(materi) {
-      const konten = {
-        link: `
-          <h2>HTML Link and Lists</h2>
-          <p><strong>Link HTML</strong> digunakan untuk membuat tautan ke halaman atau situs lain, dengan menggunakan tag &lt;a&gt;.</p>
-          <pre>&lt;a href="https://example.com"&gt;Kunjungi Website&lt;/a&gt;</pre>
-          <p><strong>List HTML</strong> adalah cara untuk membuat daftar, menggunakan &lt;ul&gt; (tidak berurutan) atau &lt;ol&gt; (berurutan), dan &lt;li&gt; untuk setiap item:</p>
-          <pre>
+  <div class="materi">
+    <div>
+      <h3 class="judul" onclick="toggle('link')">HTML Link and Lists</h3>
+      <div class="konten" id="link">
+        <p><strong>Link HTML</strong> digunakan untuk membuat tautan ke halaman lain menggunakan tag <code>&lt;a&gt;</code>:</p>
+        <pre>&lt;a href="https://example.com"&gt;Klik di sini&lt;/a&gt;</pre>
+        <p><strong>List HTML</strong> adalah daftar yang bisa berupa:</p>
+        <ul>
+          <li><code>&lt;ul&gt;</code> untuk daftar tidak berurutan (bullet)</li>
+          <li><code>&lt;ol&gt;</code> untuk daftar berurutan (angka)</li>
+        </ul>
+        <pre>
 &lt;ul&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
 &lt;/ul&gt;
-          </pre>
-        `,
-        layout: `
-          <h2>Layout dan Navigation</h2>
-          <p><strong>Layout</strong> adalah struktur tata letak halaman web menggunakan tag seperti &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;, dll.</p>
-          <p><strong>Navigation</strong> biasanya dibuat dengan &lt;nav&gt; dan berisi tautan ke berbagai bagian situs:</p>
-          <pre>
+        </pre>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="judul" onclick="toggle('layout')">Layout dan Navigation</h3>
+      <div class="konten" id="layout">
+        <p><strong>Layout</strong> digunakan untuk menyusun struktur halaman:</p>
+        <ul>
+          <li><code>&lt;header&gt;</code> - bagian atas</li>
+          <li><code>&lt;nav&gt;</code> - navigasi</li>
+          <li><code>&lt;main&gt;</code> - konten utama</li>
+          <li><code>&lt;footer&gt;</code> - kaki halaman</li>
+        </ul>
+        <p><strong>Navigation</strong> biasanya ditulis seperti ini:</p>
+        <pre>
 &lt;nav&gt;
   &lt;a href="index.html"&gt;Home&lt;/a&gt;
-  &lt;a href="about.html"&gt;About&lt;/a&gt;
+  &lt;a href="blog.html"&gt;Blog&lt;/a&gt;
 &lt;/nav&gt;
-          </pre>
-        `,
-        markdown: `
-          <h2>Markdown</h2>
-          <p><strong>Markdown</strong> adalah bahasa markup ringan untuk membuat teks yang diformat seperti judul, daftar, tautan, dll. Contoh:</p>
-          <pre>
-# Judul Utama
-## Subjudul
-- Item 1
-- Item 2
-[Link ke Google](https://google.com)
-          </pre>
-        `,
-        ruby: `
-          <h2>Menginstal Ruby dan Jekyll</h2>
-          <p>Untuk menginstal Ruby dan Jekyll:</p>
-          <ol>
-            <li>Unduh dan instal Ruby dari rubyinstaller.org</li>
-            <li>Buka terminal, jalankan: <code>gem install jekyll bundler</code></li>
-            <li>Buat proyek baru: <code>jekyll new mysite</code></li>
-            <li>Pindah ke folder: <code>cd mysite</code></li>
-            <li>Jalankan server lokal: <code>bundle exec jekyll serve</code></li>
-            <li>Buka browser: <code>http://localhost:4000</code></li>
-          </ol>
-        `
-      };
+        </pre>
+      </div>
+    </div>
 
-      document.getElementById('isiMateri').innerHTML = konten[materi];
+    <div>
+      <h3 class="judul" onclick="toggle('markdown')">Markdown</h3>
+      <div class="konten" id="markdown">
+        <p><strong>Markdown</strong> adalah bahasa ringan untuk menulis dokumen web. Contoh:</p>
+        <pre>
+# Judul Besar
+## Subjudul
+- List item
+- List item
+[Link](https://google.com)
+        </pre>
+        <p>Markdown sering dipakai di GitHub (README.md), dokumentasi, dll.</p>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="judul" onclick="toggle('ruby')">Menginstal Ruby dan Jekyll</h3>
+      <div class="konten" id="ruby">
+        <p><strong>Langkah Instalasi Ruby dan Jekyll:</strong></p>
+        <ol>
+          <li>Download Ruby: <a href="https://rubyinstaller.org">rubyinstaller.org</a></li>
+          <li>Buka terminal: <code>gem install jekyll bundler</code></li>
+          <li>Mulai proyek: <code>jekyll new mysite</code></li>
+          <li>Masuk folder: <code>cd mysite</code></li>
+          <li>Jalankan lokal: <code>bundle exec jekyll serve</code></li>
+        </ol>
+        <p>Buka di browser: <code>http://localhost:4000</code></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggle(id) {
+      const konten = document.getElementById(id);
+      if (konten.style.display === "block") {
+        konten.style.display = "none";
+      } else {
+        konten.style.display = "block";
+      }
     }
   </script>
 
