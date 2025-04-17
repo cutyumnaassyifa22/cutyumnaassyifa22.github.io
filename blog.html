@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
+  <title>blog</title>
   <style>
     body {
       font-family: sans-serif;
+      background-color: #000;
+      color: white;
       padding: 20px;
-      background: #fff;
-      color: #333;
     }
 
     nav a {
-      margin-right: 20px;
+      color: violet;
+      margin-right: 15px;
       text-decoration: none;
-      color: purple;
       font-weight: bold;
     }
 
@@ -24,128 +24,67 @@
     }
 
     h1 {
-      color: purple;
+      color: white;
     }
 
-    .materi {
-      border-top: 1px solid #ccc;
-      padding-top: 20px;
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
     }
 
-    .judul {
-      cursor: pointer;
-      color: purple;
-      font-size: 20px;
-      margin-bottom: 5px;
+    li {
+      margin-bottom: 30px;
     }
 
-    .judul:hover {
-      color: darkviolet;
+    li a {
+      color: violet;
+      font-size: 18px;
+      font-weight: bold;
     }
 
     .tanggal {
-      color: gray;
-      font-size: 14px;
-      margin-bottom: 10px;
+      margin: 5px 0;
+      color: #ccc;
     }
 
-    .konten {
-      display: none;
-      margin-bottom: 25px;
-      background: #f9f9f9;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
+    .isi {
+      margin-top: 5px;
+      color: #eee;
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="friends.html">Friends</a>
-    <a href="blog.html">Blog</a>
+    <a href="index.html">home</a>
+    <a href="friends.html">friends</a>
+    <a href="blog.html">blog</a>
   </nav>
 
-  <h1>Blog</h1>
+  <h1>blog</h1>
 
-  <div class="materi">
-    <div>
-      <div class="judul" onclick="toggle('konten1')">HTML Link and Lists</div>
+  <ul>
+    <li>
+      <a href="#">HTML Link and Lists</a>
       <div class="tanggal">20 Mar 2025</div>
-      <div class="konten" id="konten1">
-        <p><strong>HTML Link</strong> digunakan untuk membuat tautan ke halaman lain dengan tag <code>&lt;a&gt;</code>:</p>
-        <pre>&lt;a href="https://example.com"&gt;Klik di sini&lt;/a&gt;</pre>
-        <p><strong>HTML Lists</strong> digunakan untuk menampilkan daftar item:</p>
-        <ul>
-          <li><code>&lt;ul&gt;</code>: daftar tidak berurutan (bullet)</li>
-          <li><code>&lt;ol&gt;</code>: daftar berurutan (angka)</li>
-          <li><code>&lt;li&gt;</code>: item di dalam list</li>
-        </ul>
-      </div>
-    </div>
-
-    <div>
-      <div class="judul" onclick="toggle('konten2')">Layout dan Navigation</div>
+      <div class="isi">penjelasan tentang link dan list pada HTML</div>
+    </li>
+    <li>
+      <a href="#">Layout dan Navigation</a>
       <div class="tanggal">13 Mar 2025</div>
-      <div class="konten" id="konten2">
-        <p><strong>Layout</strong> menyusun bagian-bagian HTML seperti:</p>
-        <ul>
-          <li><code>&lt;header&gt;</code>: bagian atas</li>
-          <li><code>&lt;nav&gt;</code>: menu navigasi</li>
-          <li><code>&lt;main&gt;</code>: isi utama</li>
-          <li><code>&lt;footer&gt;</code>: bagian bawah</li>
-        </ul>
-        <p><strong>Navigation</strong> menggunakan link <code>&lt;a&gt;</code> untuk berpindah antar halaman:</p>
-        <pre>
-&lt;nav&gt;
-  &lt;a href="index.html"&gt;Home&lt;/a&gt;
-  &lt;a href="blog.html"&gt;Blog&lt;/a&gt;
-&lt;/nav&gt;
-        </pre>
-      </div>
-    </div>
-
-    <div>
-      <div class="judul" onclick="toggle('konten3')">Markdown</div>
+      <div class="isi">penjelasan tentang Layout dan Navigation</div>
+    </li>
+    <li>
+      <a href="#">Markdown</a>
       <div class="tanggal">06 Mar 2025</div>
-      <div class="konten" id="konten3">
-        <p><strong>Markdown</strong> adalah bahasa ringan untuk membuat format dokumen.</p>
-        <p>Contoh sintaks Markdown:</p>
-        <pre>
-# Judul
-## Subjudul
-- List item
-- List lainnya
-[Link](https://example.com)
-        </pre>
-        <p>Markdown sering digunakan di GitHub README.md dan dokumentasi lainnya.</p>
-      </div>
-    </div>
-
-    <div>
-      <div class="judul" onclick="toggle('konten4')">Menginstall Ruby dan Jekyll</div>
+      <div class="isi">penjelasan tentang Markdown</div>
+    </li>
+    <li>
+      <a href="#">Menginstall Ruby dan Jekyll</a>
       <div class="tanggal">20 Feb 2025</div>
-      <div class="konten" id="konten4">
-        <p><strong>Langkah instalasi Ruby & Jekyll:</strong></p>
-        <ol>
-          <li>Download Ruby dari <a href="https://rubyinstaller.org">rubyinstaller.org</a></li>
-          <li>Install bundler dan jekyll: <code>gem install bundler jekyll</code></li>
-          <li>Buat proyek baru: <code>jekyll new mysite</code></li>
-          <li>Masuk folder proyek: <code>cd mysite</code></li>
-          <li>Jalankan: <code>bundle exec jekyll serve</code></li>
-        </ol>
-        <p>Lalu akses di browser: <code>http://localhost:4000</code></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function toggle(id) {
-      const konten = document.getElementById(id);
-      konten.style.display = konten.style.display === "block" ? "none" : "block";
-    }
-  </script>
+      <div class="isi">penjelasan tentang instalasi Ruby dan Jekyll</div>
+    </li>
+  </ul>
 
 </body>
 </html>
