@@ -6,30 +6,53 @@
   <title>Menginstall Ruby dan Jekyll</title>
   <style>
     body {
-      background-color: #1e1e1e;
-      color: white;
+      background-color: #000;
+      color: #fff;
       font-family: sans-serif;
       padding: 20px;
+      line-height: 1.6;
     }
     h1, h2, h3 {
-      color: #c792ea;
+      color: #b462d8;
     }
     a {
-      color: #c792ea;
+      color: #b462d8;
       text-decoration: none;
     }
     pre {
-      background: #2d2d2d;
+      background-color: #111;
+      color: #0f0;
       padding: 10px;
       overflow-x: auto;
-      color: #fff;
+      border-radius: 5px;
     }
     code {
       color: #ffcb6b;
     }
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/star.png');
+      z-index: -1;
+      animation: twinkling 10s infinite alternate;
+    }
+
+    @keyframes twinkling {
+      0% {
+        opacity: 0.8;
+      }
+      100% {
+        opacity: 0.4;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="stars"></div>
+
   <h1>Menginstall Ruby dan Jekyll</h1>
   <p><em>20 Feb 2025</em></p>
   <p>Penjelasan tentang instalasi Ruby dan Jekyll.</p>
