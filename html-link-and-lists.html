@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Link and Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            margin: 40px;
+        }
+        h1 {
+            color: #8a2be2;
+        }
+        a {
+            color: #8a2be2;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Link dan List</h1>
+    <section>
+        <h2>1. HTML Link</h2>
+        <p>Link (tautan) adalah elemen dasar dalam HTML yang memungkinkan Anda untuk menghubungkan halaman web satu dengan yang lainnya atau sumber daya lainnya. Tautan ini dibuat dengan menggunakan tag <code>&lt;a&gt;</code> (anchor), yang memungkinkan pengguna untuk berpindah antar halaman atau mengakses berbagai jenis konten.</p>
+
+        <h3>1.1. Struktur Dasar HTML Link</h3>
+        <p>Tag <code>&lt;a&gt;</code> adalah elemen yang digunakan untuk membuat tautan (link). Atribut utama yang digunakan pada tag <code>&lt;a&gt;</code> adalah <code>href</code>, yang menunjukkan URL atau alamat tujuan dari tautan tersebut.</p>
+        <pre><code>&lt;a href="URL"&gt;Teks Tautan&lt;/a&gt;</code></pre>
+        <p><code>&lt;a&gt;</code>: Elemen anchor yang mendefinisikan tautan.<br>
+        <code>href</code>: Atribut yang berisi URL tujuan dari tautan. “href” singkatan dari Hypertext Reference.<br>
+        Teks Tautan: Teks yang terlihat oleh pengguna yang dapat diklik untuk mengunjungi halaman atau sumber daya yang dituju.</p>
+
+        <h3>1.2. Contoh HTML Link</h3>
+        <p><code>&lt;a href="https://www.example.com"&gt;Kunjungi Example.com&lt;/a&gt;</code></p>
+        <p>Penjelasan: <code>&lt;a href="https://www.example.com"&gt;</code> adalah tautan yang mengarah ke situs <a href="https://www.example.com" target="_blank">https://www.example.com</a>. Teks tautan yang akan ditampilkan kepada pengguna adalah "Kunjungi Example.com". Ketika pengguna mengklik teks ini, mereka akan diarahkan ke halaman example.com.</p>
+
+        <h3>1.3. Tautan ke Halaman yang Sama dan Halaman Lain</h3>
+        <p>Tautan ke halaman yang sama: <code>&lt;a href="#section1"&gt;Ke Section 1&lt;/a&gt;</code></p>
+        <p>Tautan ke halaman lain: <a href="https://www.google.com" target="_blank">Kunjungi Google</a></p>
+
+        <h3>1.4. Target untuk Tautan</h3>
+        <p>Untuk membuka tautan di tab baru, Anda bisa menggunakan atribut <code>target="_blank"</code>:</p>
+        <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Kunjungi Example.com di Tab Baru&lt;/a&gt;</code></pre>
+
+        <h3>1.5. Link Gambar</h3>
+        <p>Anda juga dapat membuat gambar menjadi tautan dengan membungkus tag <code>&lt;img&gt;</code> dalam tag <code>&lt;a&gt;</code>:</p>
+        <pre><code>&lt;a href="https://www.example.com"&gt;
+  &lt;img src="gambar.jpg" alt="Deskripsi Gambar"&gt;
+&lt;/a&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>2. HTML List</h2>
+        <p>HTML menyediakan dua jenis daftar (list) yang umum digunakan, yaitu Ordered List (Daftar Terurut) dan Unordered List (Daftar Tidak Terurut).</p>
+
+        <h3>2.1. Ordered List (Daftar Terurut)</h3>
+        <p>Ordered List digunakan ketika urutan atau nomor item dalam daftar itu penting. Daftar ini ditandai dengan tag <code>&lt;ol&gt;</code> dan setiap item daftar diletakkan dalam tag <code>&lt;li&gt;</code>.</p>
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+        <p>Contoh Ordered List:</p>
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Pertama&lt;/li&gt;
+  &lt;li&gt;Kedua&lt;/li&gt;
+  &lt;li&gt;Ketiga&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+        <h3>2.2. Unordered List (Daftar Tidak Terurut)</h3>
+        <p>Unordered List digunakan ketika urutan item dalam daftar tidak penting, sehingga item tersebut akan ditampilkan dengan tanda bullet atau simbol lainnya.</p>
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+  &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        <p>Contoh Unordered List:</p>
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Apel&lt;/li&gt;
+  &lt;li&gt;Jeruk&lt;/li&gt;
+  &lt;li&gt;Semangka&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+        <h3>2.3. List yang Tercampur (Nested List)</h3>
+        <p>Anda juga bisa membuat daftar yang memiliki daftar lain di dalamnya, yang dikenal sebagai nested list.</p>
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Item 1
+    &lt;ul&gt;
+      &lt;li&gt;Sub-item 1a&lt;/li&gt;
+      &lt;li&gt;Sub-item 1b&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Kesimpulan</h2>
+        <p>HTML Link: Menggunakan tag <code>&lt;a&gt;</code>, dengan atribut <code>href</code> untuk membuat tautan yang mengarah ke halaman lain, file, atau sumber daya lainnya. Anda bisa menambahkan atribut seperti <code>target="_blank"</code> untuk membuka link di tab baru.</p>
+        <p>HTML List: Ada dua jenis daftar yang umum digunakan dalam HTML:</p>
+        <ul>
+            <li>Ordered List (<code>&lt;ol&gt;</code>): Daftar yang diurutkan berdasarkan angka atau huruf.</li>
+            <li>Unordered List (<code>&lt;ul&gt;</code>): Daftar yang tidak terurut, menggunakan bullet atau simbol lain.</li>
+        </ul>
+        <p>Anda juga dapat membuat daftar bertingkat (nested list) dengan memasukkan list di dalam list lainnya.</p>
+        <p>HTML links dan lists adalah elemen dasar yang sangat penting dalam pembuatan halaman web, memberikan cara untuk mengorganisir dan menghubungkan informasi.</p>
+    </section>
+
+</body>
+</html>
