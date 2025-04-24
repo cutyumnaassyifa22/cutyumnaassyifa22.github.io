@@ -5,53 +5,85 @@
   <title>Blog HTML</title>
   <style>
     body {
-      background-color: black;
+      background-color: #121212;
       color: white;
       font-family: Arial, sans-serif;
       padding: 20px;
     }
-    a {
+
+    /* Link navigasi */
+    .links a {
       color: violet;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 10px;
+      text-decoration: underline;
+      margin-right: 15px;
       font-size: 18px;
     }
-    a:hover {
+
+    .links {
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    h2 a {
+      color: #5f9df7;
+      text-decoration: none;
+    }
+
+    h2 a:hover {
       text-decoration: underline;
     }
-    h2 {
-      font-size: 24px;
-    }
+
     .entry {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 10px;
+    }
+
+    .entry p {
+      margin: 5px 0;
+    }
+
+    .date {
+      color: #aaa;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Blog Materi Kuliah</h1>
-  <a href="home.html">Home</a>
-  <a href="friends.html">Friends</a>
-  <a href="blog.html">Blog</a>
-  
+  <div class="links">
+    <a href="home.html">home</a>
+    <a href="friends.html">friends</a>
+    <a href="blog.html">blog</a>
+  </div>
+
+  <h1>blog</h1>
+
   <div class="entry">
     <h2><a href="link-and-lists.html">HTML Link and Lists</a></h2>
-    <p><strong>Tanggal:</strong> 20 Mar 2025</p>
+    <p class="date">20 Mar 2025</p>
+    <p>penjelasan tentang link dan list pada HTML</p>
   </div>
 
   <div class="entry">
     <h2><a href="layout-navigation.html">Layout dan Navigation</a></h2>
-    <p><strong>Tanggal:</strong> 13 Mar 2025</p>
+    <p class="date">13 Mar 2025</p>
+    <p>penjelasan tentang Layout dan Navigation</p>
   </div>
 
   <div class="entry">
     <h2><a href="markdown.html">Markdown</a></h2>
-    <p><strong>Tanggal:</strong> 06 Mar 2025</p>
+    <p class="date">06 Mar 2025</p>
+    <p>penjelasan tentang Markdown</p>
   </div>
 
   <div class="entry">
     <h2><a href="install-ruby-jekyll.html">Menginstall Ruby dan Jekyll</a></h2>
-    <p><strong>Tanggal:</strong> 20 Feb 2025</p>
+    <p class="date">20 Feb 2025</p>
+    <p>penjelasan tentang instalasi Ruby dan Jekyll</p>
   </div>
 </body>
 </html>
