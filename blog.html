@@ -2,83 +2,56 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog</title>
+  <title>Blog HTML</title>
   <style>
     body {
       background-color: black;
       color: white;
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       padding: 20px;
     }
-
-    a, a:visited {
-      color: #b083f8;
+    a {
+      color: violet;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    a:hover {
       text-decoration: underline;
     }
-
-    nav {
-      margin-bottom: 20px;
+    h2 {
+      font-size: 24px;
     }
-
-    nav a {
-      margin-right: 10px;
-      font-size: 20px;
-    }
-
-    h1 {
-      font-size: 32px;
-    }
-
-    .judul {
-      font-size: 20px;
-      font-weight: bold;
-      margin-top: 25px;
-    }
-
-    .tanggal {
-      font-size: 14px;
-      margin: 4px 0;
-    }
-
-    .isi {
+    .entry {
       margin-bottom: 20px;
     }
   </style>
 </head>
 <body>
-
-  <nav>
-    <a href="index.html">home</a>
-    <a href="friends.html">friends</a>
-    <a href="blog.html">blog</a>
-  </nav>
-
-  <h1>Blog</h1>
-
-  <div class="judul"><a href="#">HTML Link and Lists</a></div>
-  <div class="tanggal">20 Mar 2025</div>
-  <div class="isi">
-    Penjelasan tentang link dan list pada HTML
+  <h1>Blog Materi Kuliah</h1>
+  <a href="home.html">Home</a>
+  <a href="friends.html">Friends</a>
+  <a href="blog.html">Blog</a>
+  
+  <div class="entry">
+    <h2><a href="link-and-lists.html">HTML Link and Lists</a></h2>
+    <p><strong>Tanggal:</strong> 20 Mar 2025</p>
   </div>
 
-  <div class="judul"><a href="#">Layout dan Navigation</a></div>
-  <div class="tanggal">13 Mar 2025</div>
-  <div class="isi">
-    Penjelasan tentang Layout dan Navigation
+  <div class="entry">
+    <h2><a href="layout-navigation.html">Layout dan Navigation</a></h2>
+    <p><strong>Tanggal:</strong> 13 Mar 2025</p>
   </div>
 
-  <div class="judul"><a href="#">Markdown</a></div>
-  <div class="tanggal">06 Mar 2025</div>
-  <div class="isi">
-    Penjelasan tentang Markdown
+  <div class="entry">
+    <h2><a href="markdown.html">Markdown</a></h2>
+    <p><strong>Tanggal:</strong> 06 Mar 2025</p>
   </div>
 
-  <div class="judul"><a href="#">Menginstal Ruby dan Jekyll</a></div>
-  <div class="tanggal">20 Feb 2025</div>
-  <div class="isi">
-    Penjelasan tentang instalasi Ruby dan Jekyll
+  <div class="entry">
+    <h2><a href="install-ruby-jekyll.html">Menginstall Ruby dan Jekyll</a></h2>
+    <p><strong>Tanggal:</strong> 20 Feb 2025</p>
   </div>
-
 </body>
 </html>
