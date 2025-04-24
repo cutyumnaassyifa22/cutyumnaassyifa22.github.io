@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menginstall Ruby dan Jekyll</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.8;
+      padding: 20px;
+    }
+    h1, h2, h3, h4 {
+      color: violet;
+    }
+    a {
+      color: violet;
+      text-decoration: none;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .icon img {
+      width: 100px;
+      border-radius: 50%;
+    }
+    .icon .label {
+      background: violet;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    pre {
+      background-color: #333;
+      color: #7fffd4;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      background-color: #2d2d2d;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Menginstall Ruby dan Jekyll</h1>
+  <p><strong>20 Feb 2025 -</strong></p>
+  <p>Penjelasan tentang instalasi Ruby dan Jekyll.</p>
+
+  <div class="icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" alt="Ruby Icon">
+    <div class="label">Jekyll</div>
+  </div>
+
+  <h2>1. Instalasi Ruby</h2>
+  <p>Ruby adalah bahasa pemrograman yang digunakan oleh Jekyll untuk membangun situs statis. Untuk mulai menggunakan Jekyll, pastikan Ruby telah terpasang di sistem Anda.</p>
+
+  <h3>1.1 Cek Ruby</h3>
+  <pre><code>ruby -v</code></pre>
+
+  <h3>1.2 Instalasi Ruby Sesuai OS</h3>
+  <p><strong>Windows:</strong> Gunakan <a href="https://rubyinstaller.org">RubyInstaller</a> dan ikuti petunjuk instalasinya.</p>
+  <p><strong>macOS:</strong></p>
+  <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"</code></pre>
+  <p><strong>Linux (Ubuntu):</strong></p>
+  <pre><code>sudo apt update
+sudo apt install ruby-full</code></pre>
+
+  <h2>2. Instalasi Jekyll</h2>
+  <pre><code>gem install jekyll bundler</code></pre>
+
+  <h3>2.1 Buat Proyek Jekyll</h3>
+  <pre><code>jekyll new my-site</code></pre>
+
+  <h3>2.2 Jalankan Situs Lokal</h3>
+  <pre><code>cd my-site
+bundle exec jekyll serve</code></pre>
+
+  <h3>2.3 Struktur Direktori</h3>
+  <ul>
+    <li><code>_posts/</code>: Menyimpan artikel blog</li>
+    <li><code>_config.yml</code>: Konfigurasi situs</li>
+    <li><code>index.html</code>: Halaman utama</li>
+  </ul>
+
+  <h2>3. Menggunakan Bundler</h2>
+  <p>Bundler membantu mengelola dependensi Ruby.</p>
+  <pre><code>gem install bundler</code></pre>
+
+  <h3>3.1 Buat File Gemfile</h3>
+  <pre><code>source 'https://rubygems.org'
+gem 'jekyll'
+gem 'jekyll-feed'</code></pre>
+
+  <h3>3.2 Instalasi dengan Bundler</h3>
+  <pre><code>bundle install</code></pre>
+
+  <h2>4. Kesimpulan</h2>
+  <ul>
+    <li><strong>Ruby:</strong> Dibutuhkan untuk menjalankan Jekyll.</li>
+    <li
