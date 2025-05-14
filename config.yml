@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Konfigurasi Jekyll (config.yml)</title>
+  <title>Layout dan Navigation</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,61 +27,83 @@
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
-  </div>
-
-  <h1>Mengenal dan Menyunting _config.yml</h1>
-  <p><em>20 Feb 2025</em></p>
-  <p><strong>_config.yml</strong> adalah file konfigurasi utama dalam proyek Jekyll yang digunakan untuk mengatur berbagai aspek dari situs statis kita.</p>
+  </div> 
+  
+  <h1>Memahami dan Mengelola File _config.yml di Jekyll</h1>
+  <p><em>14 Mei 2025</em></p>
 
   <h2>1. Apa itu _config.yml?</h2>
-  <p>File ini berisi pengaturan global untuk situs Jekyll Anda, seperti nama situs, deskripsi, URL, dan lainnya. File ini ditulis dalam format YAML yang simpel dan mudah dibaca.</p>
+  <p>_config.yml adalah file konfigurasi utama dalam proyek Jekyll. File ini memegang semua pengaturan global yang memengaruhi bagaimana situs Anda dibangun, ditampilkan, dan dijalankan. Dengan file ini, Anda bisa mengatur berbagai hal seperti judul situs, deskripsi, plugin, URL dasar, struktur navigasi, hingga tema yang digunakan.</p>
 
-  <h2>2. Contoh isi _config.yml</h2>
-  <pre><code>title: Situs Saya
-description: Situs blog pribadi menggunakan Jekyll
-baseurl: "" # kosongkan jika di root
-url: "https://namakamu.github.io"
+  <h2>2. Format YAML: Dasar Penulisan</h2>
+  <p>File _config.yml ditulis dalam format YAML (YAML Ain't Markup Language) yang sangat sensitif terhadap indentasi dan tidak boleh memakai tab. Gunakan 2 spasi untuk setiap level.</p>
 
+  <h2>3. Contoh Umum _config.yml</h2>
+  <pre><code>title: Blog Yumna
+description: Blog pribadi tentang pemrograman, desain, dan teknologi
+baseurl: "/yumnaassyifa22" # sesuai nama repo GitHub Pages
+url: "https://yumnaassyifa22.github.io"
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
 
 author:
   name: Yumna Assyifa
-  email: email@example.com
+  email: yumna@example.com
 
 markdown: kramdown
-highlighter: rouge</code></pre>
+highlighter: rouge
+paginate: 5
+paginate_path: "/page:num/"</code></pre>
 
-  <h2>3. Pengaturan Umum</h2>
+  <h2>4. Penjelasan Setiap Properti</h2>
   <ul>
-    <li><strong>title</strong>: Judul situs yang akan tampil di halaman browser.</li>
-    <li><strong>description</strong>: Deskripsi singkat tentang situs Anda.</li>
-    <li><strong>url</strong>: Alamat utama situs Anda di hosting.</li>
-    <li><strong>baseurl</strong>: Jika disimpan di subfolder (seperti GitHub Pages), isi sesuai nama repo.</li>
-    <li><strong>theme</strong>: Tema yang digunakan.</li>
-    <li><strong>plugins</strong>: Plugin tambahan seperti `jekyll-feed`, `jekyll-seo-tag`, dll.</li>
+    <li><strong>title</strong>: Nama situs yang muncul di tab browser dan hasil pencarian.</li>
+    <li><strong>description</strong>: Deskripsi pendek situs Anda.</li>
+    <li><strong>baseurl</strong>: Hanya diisi jika Anda menghosting di subfolder (misalnya GitHub Pages).</li>
+    <li><strong>url</strong>: Alamat domain situs Anda.</li>
+    <li><strong>theme</strong>: Tema yang digunakan (contoh: minima, jekyll-theme-cayman, dll).</li>
+    <li><strong>plugins</strong>: Plugin tambahan seperti SEO atau feed RSS.</li>
+    <li><strong>paginate</strong>: Jumlah postingan per halaman (jika menggunakan pagination).</li>
+    <li><strong>paginate_path</strong>: Format URL untuk pagination.</li>
+    <li><strong>markdown</strong>: Jenis markdown engine (biasa pakai kramdown).</li>
+    <li><strong>highlighter</strong>: Sintaks penyorot kode (contoh: rouge).</li>
   </ul>
 
-  <h2>4. Tips Menyunting</h2>
-  <ul>
-    <li>Gunakan indentasi spasi, bukan tab.</li>
-    <li>Setelah mengubah, restart server Jekyll agar perubahan terbaca.</li>
-    <li>Periksa di terminal jika ada kesalahan YAML.</li>
-  </ul>
-
-  <h2>5. Menambahkan Navigasi Kustom</h2>
-  <p>Contoh jika ingin menambahkan menu kustom di header:</p>
+  <h2>5. Menambahkan Navigasi Dinamis</h2>
+  <p>Kita juga bisa membuat navigasi otomatis dengan menambahkan array menu:</p>
   <pre><code>nav:
   - title: Home
     url: /
   - title: Blog
     url: /blog/
-  - title: Tentang
+  - title: Tentang Saya
     url: /about/</code></pre>
 
-  <h2>6. Kesimpulan</h2>
-  <p>_config.yml memberi kontrol penuh terhadap pengaturan proyek Jekyll Anda. Dengan memahami dan mengedit file ini, Anda bisa menyesuaikan tampilan, fungsi, dan struktur blog sesuai keinginan.</p>
+  <h2>6. Custom Variable</h2>
+  <p>Anda bisa menambahkan variabel kustom di _config.yml lalu memanggilnya di layout dengan Liquid syntax:</p>
+  <pre><code>footer_text: "Hak Cipta &copy; 2025 Yumna Assyifa"</code></pre>
+  <p>Dan di HTML:</p>
+  <pre><code>{{ site.footer_text }}</code></pre>
+
+  <h2>7. Tips & Trik</h2>
+  <ul>
+    <li>Jangan lupa restart server setelah mengubah _config.yml.</li>
+    <li>Selalu validasi YAML dengan <a href="https://yamlchecker.com">yamlchecker.com</a>.</li>
+    <li>Gunakan komentar dengan tanda <code>#</code> untuk memberi catatan di file.</li>
+    <li>Jika error, cek indentasi dan pastikan tidak ada spasi atau karakter aneh.</li>
+  </ul>
+
+  <h2>8. Kesalahan Umum</h2>
+  <ul>
+    <li>Penggunaan tab daripada spasi</li>
+    <li>URL tanpa tanda kutip yang mengandung karakter spesial</li>
+    <li>Salah penempatan properti (misal: di bawah plugins salah indentasi)</li>
+  </ul>
+
+  <h2>9. Kesimpulan</h2>
+  <p>_config.yml adalah jantung dari pengaturan situs Jekyll Anda. Semakin baik Anda memahami file ini, semakin fleksibel situs Anda bisa dibangun. Mulai dari tampilan, navigasi, sampai ke struktur blog, semua bisa dikendalikan dari sini.</p>
 
 </body>
 </html>
