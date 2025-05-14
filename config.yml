@@ -27,11 +27,10 @@
     <div class="star"></div>
     <div class="star"></div>
     <div class="star"></div>
-  </div> 
-  
-  <h1>Memahami dan Mengelola File _config.yml di Jekyll</h1>
-  <p><em>14 Mei 2025</em></p>
+  </div>
 
+  <!-- Main Content -->
+  <div class="card">
   <h2>1. Apa itu _config.yml?</h2>
   <p>_config.yml adalah file konfigurasi utama dalam proyek Jekyll. File ini memegang semua pengaturan global yang memengaruhi bagaimana situs Anda dibangun, ditampilkan, dan dijalankan. Dengan file ini, Anda bisa mengatur berbagai hal seperti judul situs, deskripsi, plugin, URL dasar, struktur navigasi, hingga tema yang digunakan.</p>
 
