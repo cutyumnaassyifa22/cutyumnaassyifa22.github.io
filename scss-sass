@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SCSS / SASS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="friends.html">Friends</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <!-- Stars Background -->
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="card">
+    <h1>SCSS / SASS</h1>
+    <p><em>14 Mei 2025</em></p>
+
+    <p><strong>SASS (Syntactically Awesome Stylesheets)</strong> dan <strong>SCSS</strong> adalah CSS preprocessor yang memberikan fitur tambahan seperti variabel, nesting, mixin, inheritance, dan modularisasi untuk menulis kode CSS yang lebih rapi, efisien, dan terstruktur.</p>
+
+    <h2>1. Perbedaan SASS dan SCSS</h2>
+    <ul>
+      <li>SASS menggunakan indentasi tanpa tanda kurung kurawal <code>{}</code> dan titik koma <code>;</code></li>
+      <li>SCSS lebih mirip CSS biasa dan mendukung tanda <code>{}</code> dan <code>;</code></li>
+      <li>File SASS berekstensi <code>.sass</code> dan SCSS berekstensi <code>.scss</code></li>
+    </ul>
+
+    <h2>2. Contoh Penulisan</h2>
+
+    <h3>SCSS:</h3>
+    <pre><code>$primary-color: blue;
+
+body {
+  background-color: $primary-color;
+  font-size: 16px;
+}</code></pre>
+
+    <h3>SASS:</h3>
+    <pre><code>$primary-color: blue
+
+body
+  background-color: $primary-color
+  font-size: 16px</code></pre>
+
+    <h2>3. Fitur SCSS</h2>
+    <ul>
+      <li><strong>Variabel</strong> untuk menyimpan warna, font, ukuran, dll.</li>
+      <li><strong>Nesting</strong> agar penulisan lebih rapi dan mengikuti struktur HTML.</li>
+      <li><strong>Mixin</strong> untuk mendefinisikan blok gaya yang bisa digunakan ulang.</li>
+      <li><strong>Inheritance</strong> menggunakan <code>@extend</code> untuk mewarisi gaya dari selector lain.</li>
+      <li><strong>Modularisasi</strong> menggunakan <code>@import</code> untuk memecah file SCSS.</li>
+    </ul>
+
+    <h3>Contoh Variabel:</h3>
+    <pre><code>$main-color: #333;
+
+h1 {
+  color: $main-color;
+}</code></pre>
+
+    <h3>Contoh Mixin:</h3>
+    <pre><code>@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  @include center;
+}</code></pre>
+
+    <h2>4. SCSS di Jekyll</h2>
+    <p>Dalam proyek Jekyll, file SCSS biasanya disimpan di folder <code>_sass</code> atau <code>assets/css</code>. Kamu bisa mengimpor file SCSS ke dalam <code>main.scss</code> dan Jekyll akan mengompilasinya secara otomatis saat build.</p>
+
+    <h2>5. Kesimpulan</h2>
+    <p>SCSS dan SASS memberikan banyak kemudahan dan kekuatan dalam menulis CSS. SCSS lebih familiar bagi pemula karena sintaksnya mirip dengan CSS. Dengan menggunakan SCSS, proyek web menjadi lebih bersih, modular, dan mudah dikelola.</p>
+  </div>
+
+</body>
+</html>
