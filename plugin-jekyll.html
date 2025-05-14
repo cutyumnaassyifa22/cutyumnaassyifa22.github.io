@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plugin Jekyll</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="friends.html">Friends</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <!-- Stars Background -->
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <h1>Plugin dalam Jekyll</h1>
+  <p><em>24 Apr 2025</em></p>
+  <p>Jekyll mendukung sistem plugin yang memungkinkan pengguna memperluas dan menyesuaikan perilaku situs statis mereka. Plugin sangat berguna bagi pengembang yang ingin menambahkan fitur tambahan, seperti pagination otomatis, integrasi feed, SEO, sitemap, dan lainnya.</p>
+
+  <h2>1. Apa Itu Plugin?</h2>
+  <p>Plugin adalah ekstensi atau skrip Ruby yang ditambahkan ke dalam proyek Jekyll untuk menambahkan fungsionalitas yang tidak tersedia secara default. Anda dapat menggunakan plugin yang telah tersedia di RubyGems atau membuat plugin sendiri untuk kebutuhan spesifik.</p>
+
+  <h2>2. Jenis Plugin dalam Jekyll</h2>
+  <ul>
+    <li><strong>Plugin resmi (whitelisted)</strong>: Dapat digunakan langsung di GitHub Pages.</li>
+    <li><strong>Plugin pihak ketiga</strong>: Plugin dari luar yang harus diinstal secara manual.</li>
+    <li><strong>Plugin lokal</strong>: Plugin buatan sendiri yang diletakkan dalam folder <code>_plugins</code>.</li>
+  </ul>
+
+  <h2>3. Contoh Plugin Populer</h2>
+  <ul>
+    <li><code>jekyll-feed</code> – Menghasilkan RSS feed otomatis.</li>
+    <li><code>jekyll-seo-tag</code> – Menambahkan tag SEO secara otomatis ke setiap halaman.</li>
+    <li><code>jekyll-sitemap</code> – Membuat file sitemap.xml secara otomatis.</li>
+    <li><code>jekyll-paginate</code> – Menambahkan navigasi pagination untuk daftar post.</li>
+    <li><code>jekyll-archives</code> – Menyediakan arsip berdasarkan tag, kategori, atau tahun.</li>
+  </ul>
+
+  <h2>4. Cara Menambahkan Plugin</h2>
+
+  <h3>4.1. Melalui Gemfile dan _config.yml</h3>
+  <p>Plugin dari RubyGems dapat ditambahkan dengan mengedit <code>Gemfile</code> dan <code>_config.yml</code>.</p>
+
+  <h4>A. Tambahkan ke dalam Gemfile</h4>
+  <pre><code>gem 'jekyll-feed'
+gem 'jekyll-seo-tag'</code></pre>
+
+  <h4>B. Tambahkan ke dalam _config.yml</h4>
+  <pre><code>plugins:
+  - jekyll-feed
+  - jekyll-seo-tag</code></pre>
+
+  <h4>C. Instal plugin dengan bundler</h4>
+  <pre><code>bundle install</code></pre>
+
+  <h4>D. Jalankan situs</h4>
+  <pre><code>bundle exec jekyll serve</code></pre>
+
+  <h3>4.2. Menggunakan Plugin Lokal</h3>
+  <p>Anda bisa menaruh file Ruby dengan ekstensi <code>.rb</code> di dalam folder <code>_plugins/</code>. Contoh: membuat filter untuk memformat tanggal ke Bahasa Indonesia.</p>
+
+  <pre><code># _plugins/tanggal_indo.rb
+module Jekyll
+  module TanggalIndo
+    def tanggal_indo(date)
+      bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
+               "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+      "#{date.strftime('%-d')} #{bulan[date.strftime('%-m').to_i - 1]} #{date.strftime('%Y')}"
+    end
+  end
+end
+
+Liquid::Template.register_filter(Jekyll::TanggalIndo)
+</code></pre>
+
+  <p>Gunakan di template:</p>
+  <pre><code>{{ page.date | tanggal_indo }}</code></pre>
+
+  <h2>5. Keterbatasan di GitHub Pages</h2>
+  <p>GitHub Pages tidak mengizinkan semua plugin. Hanya plugin yang telah di-*whitelist* (diizinkan resmi) yang bisa digunakan langsung. Untuk menggunakan plugin kustom atau tidak resmi, Anda perlu melakukan build Jekyll secara lokal dan hanya mengupload hasilnya (folder <code>_site</code>) ke GitHub.</p>
+
+  <h3>Solusi alternatif:</h3>
+  <ul>
+    <li>Build secara lokal, lalu push ke branch <code>gh-pages</code> atau gunakan GitHub Actions.</li>
+    <li>Gunakan layanan hosting alternatif seperti Netlify atau Vercel yang mendukung semua plugin.</li>
+  </ul>
+
+  <h2>6. Tips Penggunaan Plugin</h2>
+  <ul>
+    <li>Gunakan plugin resmi terlebih dahulu untuk menjaga kompatibilitas.</li>
+    <li>Dokumentasikan plugin tambahan agar tidak membingungkan contributor proyek.</li>
+    <li>Gunakan plugin hanya jika memang dibutuhkan — terlalu banyak plugin bisa memperlambat build.</li>
+    <li>Selalu periksa versi plugin dan dukungan Jekyll yang sesuai.</li>
+  </ul>
+
+  <h2>7. Kesimpulan</h2>
+  <p>Plugin adalah cara terbaik untuk menambah fitur dan fleksibilitas pada situs Jekyll Anda. Baik plugin resmi maupun kustom dapat membantu menghemat waktu, menambahkan fungsi otomatisasi, dan meningkatkan kualitas situs. Namun, penggunaannya perlu diperhatikan terutama jika Anda menggunakan GitHub Pages sebagai host.</p>
+
+</body>
+</html>
