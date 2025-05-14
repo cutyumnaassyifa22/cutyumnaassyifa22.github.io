@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mengenal File config.yml di Jekyll</title>
+  <title>Layout dan Navigation</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <!-- Navbar -->
   <nav>
     <a href="index.html">Home</a>
@@ -28,57 +29,73 @@
     <div class="star"></div>
   </div>
 
-  <h1>Mengenal dan Mengkonfigurasi <code>_config.yml</code> pada Jekyll</h1>
-  <p><em>14 Mei 2025</em></p>
-  <p>File <code>_config.yml</code> adalah pusat konfigurasi pada proyek Jekyll yang mengatur banyak aspek dari situs seperti judul, tema, plugin, struktur URL, dan lainnya.</p>
+  <h1>Mengenal dan Mengatur _config.yml di Jekyll</h1>
+  <p><em>20 Februari 2025</em></p>
+  <p>File <code>_config.yml</code> adalah pusat konfigurasi dalam proyek Jekyll. Di sini Anda bisa mengatur semua pengaturan dasar dan lanjutan agar website berjalan sesuai kebutuhan.</p>
 
-  <h2>1. Apa itu <code>_config.yml</code>?</h2>
-  <p><code>_config.yml</code> adalah file YAML yang digunakan untuk mengatur pengaturan global Jekyll. File ini dibaca saat build dan memengaruhi seluruh proses rendering situs.</p>
+  <h2>1. Fungsi _config.yml</h2>
+  <p>File ini mengatur aspek penting seperti URL, tema, metadata situs, plugin, struktur folder, bahkan variabel global yang bisa dipakai di seluruh halaman.</p>
 
-  <h2>2. Contoh Isi <code>_config.yml</code></h2>
-  <pre><code>title: "Blog Belajar Jekyll"
-description: "Tutorial membuat blog statis dengan Jekyll"
-url: "https://username.github.io"
-baseurl: "" # kosong jika tidak ada subdirektori
+  <h2>2. Contoh Dasar _config.yml</h2>
+  <pre><code>title: "Blog Pribadi Cuty"
+description: "Berbagi cerita dan belajar Jekyll"
+author: Cuty Yumna
+email: cutyyumna@email.com
+baseurl: "" # Untuk GitHub Pages, bisa jadi "/namaprojek"
+url: "https://cutyumnaassyifa22.github.io"
 theme: minima
-author:
-  name: Nama Kamu
-  email: email@example.com
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
 </code></pre>
 
-  <h2>3. Penjelasan Masing-masing Konfigurasi</h2>
+  <h2>3. Penjelasan Elemen</h2>
   <ul>
-    <li><strong>title</strong>: Judul situs yang akan tampil di header dan tab browser.</li>
-    <li><strong>description</strong>: Deskripsi singkat untuk SEO dan meta tag.</li>
-    <li><strong>url</strong>: URL utama situs, terutama penting untuk deploy ke GitHub Pages.</li>
-    <li><strong>baseurl</strong>: Digunakan jika situs ada di dalam sub-folder repositori.</li>
-    <li><strong>theme</strong>: Tema Jekyll yang digunakan. Contoh: <code>minima</code>.</li>
-    <li><strong>author</strong>: Informasi penulis blog (nama dan email).</li>
-    <li><strong>plugins</strong>: Plugin tambahan untuk fitur SEO, RSS feed, dsb.</li>
-    <li><strong>markdown</strong>: Jenis parser Markdown. Biasanya menggunakan <code>kramdown</code>.</li>
-    <li><strong>kramdown</strong>: Konfigurasi tambahan untuk kramdown, termasuk syntax highlighting.</li>
+    <li><code>title</code>: Nama situs yang muncul di tab browser</li>
+    <li><code>description</code>: Deskripsi untuk SEO</li>
+    <li><code>author</code>: Nama pembuat konten</li>
+    <li><code>email</code>: Bisa digunakan untuk halaman kontak</li>
+    <li><code>baseurl</code>: Subdirektori situs (jika pakai GitHub Pages)</li>
+    <li><code>url</code>: Alamat utama situs</li>
+    <li><code>theme</code>: Tema Jekyll yang dipakai</li>
+    <li><code>plugins</code>: Daftar plugin untuk menambah fitur</li>
   </ul>
 
-  <h2>4. Mengedit dan Menerapkan Perubahan</h2>
-  <p>Untuk melihat perubahan konfigurasi, simpan file <code>_config.yml</code> dan jalankan ulang server Jekyll menggunakan:</p>
-  <pre><code>bundle exec jekyll serve</code></pre>
-  <p>Perubahan akan tercermin di <code>http://localhost:4000</code>.</p>
+  <h2>4. Contoh Tambahan Konfigurasi</h2>
+  <p>Untuk blog multibahasa:</p>
+  <pre><code>languages: ["id", "en"]
+default_lang: "id"</code></pre>
 
-  <h2>5. Tips Penting</h2>
+  <p>Untuk mengatur halaman statis:</p>
+  <pre><code>include:
+  - about.md
+  - contact.md
+</code></pre>
+
+  <p>Menentukan struktur permalink:</p>
+  <pre><code>permalink: /:categories/:title/</code></pre>
+
+  <h2>5. Variabel Global</h2>
+  <p>Variabel dari <code>_config.yml</code> bisa dipanggil di HTML atau markdown seperti ini:</p>
+  <pre><code>{{ site.title }}
+{{ site.email }}</code></pre>
+
+  <h2>6. Kesalahan Umum (Troubleshooting)</h2>
   <ul>
-    <li>Gunakan indentasi 2 spasi, bukan tab, karena YAML sangat sensitif terhadap spasi.</li>
-    <li>Jika ada error saat build, periksa kesalahan sintaks di <code>_config.yml</code>.</li>
-    <li>Hindari karakter khusus seperti `:` di value tanpa tanda kutip.</li>
+    <li><strong>Indentasi salah:</strong> Gunakan spasi, bukan tab</li>
+    <li><strong>Tidak pakai spasi setelah titik dua:</strong> Misalnya <code>title:Blog</code> (SALAH), harus <code>title: Blog</code></li>
+    <li><strong>Lupa reload:</strong> Setelah mengedit file ini, jalankan ulang server: <code>bundle exec jekyll serve</code></li>
   </ul>
 
-  <h2>6. Kesimpulan</h2>
-  <p><code>_config.yml</code> memegang peran penting dalam proyek Jekyll. Dengan memahami strukturnya, Anda bisa mengatur tampilan, fungsi, dan informasi situs secara menyeluruh. Ini adalah langkah penting dalam membuat blog statis profesional.</p>
+  <h2>7. Tips Praktis</h2>
+  <ul>
+    <li>Selalu backup file <code>_config.yml</code> sebelum mengubah banyak hal</li>
+    <li>Uji perubahan secara lokal sebelum di-push ke GitHub Pages</li>
+    <li>Untuk proyek besar, bisa buat beberapa file config dan panggil dengan parameter: <code>jekyll serve --config _config.yml,_config_dev.yml</code></li>
+  </ul>
+
+  <h2>8. Kesimpulan</h2>
+  <p>Dengan memahami dan menggunakan <code>_config.yml</code> secara maksimal, kamu bisa mengontrol keseluruhan perilaku situs Jekyll-mu. File ini fleksibel dan powerful, cocok untuk pengaturan sederhana hingga tingkat lanjut.</p>
 
 </body>
+</html>
