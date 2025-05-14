@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Penggunaan dan Struktur File config.yml</title>
+  <title>Mengenal File config.yml di Jekyll</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,6 +13,7 @@
     <a href="index.html">Home</a>
     <a href="friends.html">Friends</a>
     <a href="blog.html">Blog</a>
+    <a href="config.html">Config</a>
   </nav>
 
   <!-- Stars Background -->
@@ -28,96 +29,97 @@
     <div class="star"></div>
     <div class="star"></div>
   </div>
-  
-  <h1>Penggunaan dan Struktur File config.yml</h1>
-  <p><em>17 April 2025</em></p>
-  <p>Penjelasan tentang struktur dan cara penggunaan file konfigurasi config.yml dalam aplikasi dan pengembangannya.</p>
 
-  <h2>1. Apa itu File Konfigurasi config.yml?</h2>
-  <p>File konfigurasi config.yml adalah sebuah file yang menggunakan format YAML (YAML Ain't Markup Language) untuk menyimpan pengaturan aplikasi. YAML digunakan karena mudah dibaca oleh manusia dan mendukung struktur data yang kompleks. File ini berfungsi untuk mengatur pengaturan dan preferensi aplikasi agar aplikasi dapat berfungsi dengan baik sesuai dengan kebutuhan pengguna atau lingkungan pengembangan.</p>
+  <h1>Panduan Lengkap Menggunakan _config.yml di Jekyll</h1>
+  <p><em>20 Feb 2025</em></p>
 
-  <h2>2. Mengapa Menggunakan YAML untuk Konfigurasi?</h2>
-  <p>YAML memiliki beberapa kelebihan dibandingkan dengan format lain seperti XML atau JSON, antara lain:</p>
+  <p><code>_config.yml</code> adalah jantung dari proyek Jekyll. Semua konfigurasi global disimpan di sini dan memengaruhi seluruh situs. File ini ditulis dalam format YAML dan digunakan untuk menyederhanakan pengaturan tanpa perlu mengedit kode HTML secara langsung.</p>
+
+  <h2>1. Fungsi _config.yml</h2>
   <ul>
-    <li><strong>Sederhana dan mudah dibaca:</strong> Sintaks YAML lebih ringkas dan lebih mudah dipahami oleh manusia.</li>
-    <li><strong>Mendukung Struktur Hierarki:</strong> YAML mendukung pemakaian array, objek, dan data struktural lainnya secara langsung.</li>
-    <li><strong>Lebih sedikit tanda baca:</strong> Dibandingkan dengan format JSON atau XML, YAML menggunakan lebih sedikit tanda baca, membuatnya lebih bersih dan mudah dipahami.</li>
+    <li>Menentukan metadata situs (judul, deskripsi, URL)</li>
+    <li>Mengatur tema dan plugin</li>
+    <li>Menambahkan variabel global yang bisa digunakan di seluruh halaman</li>
+    <li>Mengatur direktori dan struktur build</li>
   </ul>
 
-  <h2>3. Struktur Dasar File config.yml</h2>
-  <p>File config.yml berisi pengaturan yang diperlukan oleh aplikasi untuk berjalan dengan benar. Berikut adalah contoh struktur dasar file config.yml yang sering digunakan dalam pengembangan aplikasi:</p>
-
-  <h3>Contoh Struktur File config.yml</h3>
+  <h2>2. Contoh Lengkap isi _config.yml</h2>
   <pre><code>
-# Konfigurasi aplikasi
-app:
-  name: "MyApp"  # Nama aplikasi
-  version: "1.0.0"  # Versi aplikasi
-  environment: "production"  # Lingkungan aplikasi (production/development)
+title: "Blog Teknologi Yumna"
+description: "Tutorial Web dan Pemrograman"
+url: "https://cutyumnaassyifa22.github.io"
+baseurl: "" # kosong jika di root domain
+author: Cut Yumna
+email: yumna@example.com
+theme: minima
 
-# Pengaturan Database
-database:
-  host: "localhost"  # Alamat host database
-  port: 5432  # Port untuk koneksi database
-  username: "db_user"  # Username untuk login ke database
-  password: "db_password"  # Password untuk login ke database
-  db_name: "my_database"  # Nama database yang digunakan
+social:
+  github: cutyumnaassyifa22
+  instagram: yumna.dev
 
-# Pengaturan Server
-server:
-  host: "0.0.0.0"  # IP address server
-  port: 8080  # Port yang digunakan server untuk menerima request
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# Pengaturan Log
-log:
-  level: "info"  # Level log yang dicatat (info/debug/warn/error)
-  file: "/var/log/myapp.log"  # Lokasi file log
-  format: "json"  # Format log (json atau text)
-
-# Pengaturan API
-api:
-  base_url: "https://api.example.com"  # URL dasar API
-  timeout: 30  # Timeout untuk permintaan API dalam detik
-
-# Pengaturan Email
-email:
-  smtp_server: "smtp.email.com"  # Alamat server SMTP
-  smtp_port: 587  # Port untuk server SMTP
-  username: "user@email.com"  # Username untuk autentikasi
-  password: "email_password"  # Password untuk autentikasi
-  from: "no-reply@email.com"  # Alamat pengirim email
-
-# Pengaturan Fitur
-features:
-  enable_feature_x: true  # Mengaktifkan fitur X
-  enable_feature_y: false  # Menonaktifkan fitur Y
+permalink: /:categories/:title/
+paginate: 5
+paginate_path: "/page:num"
+markdown: kramdown
+highlighter: rouge
   </code></pre>
 
-  <h2>4. Penjelasan Elemen dalam File Konfigurasi</h2>
-  <p>Berikut adalah penjelasan mengenai beberapa elemen yang terdapat dalam file konfigurasi config.yml:</p>
+  <h2>3. Penjelasan Properti Penting</h2>
   <ul>
-    <li><strong>Komentar:</strong> Komentar diawali dengan tanda <code>#</code> dan tidak akan diproses oleh aplikasi. Digunakan untuk memberi penjelasan dalam kode.</li>
-    <li><strong>Tipe Data:</strong> YAML mendukung berbagai tipe data seperti string, angka, boolean, array, dan objek. Setiap nilai dikaitkan dengan sebuah key dalam pasangan key-value.</li>
-    <li><strong>Indentasi:</strong> Gunakan indentasi yang konsisten dengan spasi (bukan tab). Biasanya 2 spasi digunakan untuk setiap tingkat indentasi.</li>
+    <li><strong>title</strong>: Nama situs yang akan tampil di tab browser dan halaman utama.</li>
+    <li><strong>description</strong>: Deskripsi singkat situs untuk SEO dan meta tag.</li>
+    <li><strong>url</strong>: Alamat utama situs (wajib jika menggunakan GitHub Pages).</li>
+    <li><strong>baseurl</strong>: Path tambahan jika situs tidak berada di root domain.</li>
+    <li><strong>theme</strong>: Tema Jekyll yang digunakan, seperti <code>minima</code>.</li>
+    <li><strong>plugins</strong>: Daftar plugin Ruby yang akan digunakan oleh Jekyll.</li>
+    <li><strong>permalink</strong>: Format URL artikel atau halaman.</li>
+    <li><strong>paginate</strong>: Jumlah post per halaman jika menggunakan pagination.</li>
+    <li><strong>markdown</strong>: Engine markdown, biasanya <code>kramdown</code>.</li>
+    <li><strong>highlighter</strong>: Syntax highlighter untuk kode, biasanya <code>rouge</code>.</li>
   </ul>
 
-  <h2>5. Keuntungan Menggunakan config.yml dalam Pengembangan Aplikasi</h2>
+  <h2>4. Menggunakan Variabel Global</h2>
+  <p>Variabel seperti <code>{{ site.title }}</code> atau <code>{{ site.author }}</code> bisa digunakan dalam layout dan post. Contoh penggunaan:</p>
+  <pre><code>&copy; {{ site.author }} - {{ site.title }}</code></pre>
+
+  <h2>5. Tips Menulis YAML yang Benar</h2>
   <ul>
-    <li><strong>Fleksibilitas:</strong> Pengaturan aplikasi bisa dibedakan antara berbagai lingkungan seperti pengembangan, pengujian, dan produksi.</li>
-    <li><strong>Mempermudah Pemeliharaan:</strong> Konfigurasi dapat diubah tanpa perlu mengubah kode sumber aplikasi.</li>
-    <li><strong>Mudah Dibaca:</strong> Format YAML mudah dipahami oleh pengembang dan non-pengembang, memudahkan kolaborasi dalam tim.</li>
+    <li>Gunakan spasi, <strong>jangan tab</strong></li>
+    <li>Pastikan tidak ada indentasi yang salah</li>
+    <li>Gunakan tanda kutip jika mengandung simbol khusus</li>
+    <li>Pastikan file tidak mengandung karakter aneh (gunakan UTF-8)</li>
   </ul>
 
-  <h2>6. Praktik Terbaik dalam Penulisan config.yml</h2>
+  <h2>6. Menambahkan Plugin di GitHub Pages</h2>
+  <p>GitHub Pages hanya mendukung beberapa plugin resmi. Untuk menggunakan plugin lain, kamu harus build secara lokal lalu push hasilnya ke GitHub.</p>
+
+  <h3>Contoh Plugin yang Didukung:</h3>
   <ul>
-    <li><strong>Gunakan Indentasi yang Konsisten:</strong> Biasakan menggunakan indentasi dengan dua spasi untuk struktur yang rapi.</li>
-    <li><strong>Gunakan Nama Variabel yang Jelas:</strong> Pastikan nama key memberikan informasi yang cukup tentang fungsinya.</li>
-    <li><strong>Pemisahan Berdasarkan Lingkungan:</strong> Gunakan file konfigurasi terpisah untuk setiap lingkungan (misalnya, <code>config.prod.yml</code>, <code>config.dev.yml</code>).</li>
-    <li><strong>Jaga Kerahasiaan Data Sensitif:</strong> Hindari menulis data sensitif seperti password atau kunci API langsung di dalam file konfigurasi.</li>
+    <li><code>jekyll-feed</code></li>
+    <li><code>jekyll-seo-tag</code></li>
+    <li><code>jekyll-sitemap</code></li>
   </ul>
 
-  <h2>7. Kesimpulan</h2>
-  <p>File config.yml adalah alat yang sangat berguna untuk mengelola pengaturan aplikasi dengan cara yang terstruktur dan mudah dipahami. Penggunaan format YAML memungkinkan pengembang untuk menulis dan membaca konfigurasi dengan lebih mudah, yang sangat bermanfaat dalam pengembangan perangkat lunak yang membutuhkan pengaturan yang fleksibel dan dapat dikonfigurasi sesuai kebutuhan.</p>
+  <h2>7. Konfigurasi Build dan Output</h2>
+  <p>Kamu bisa menentukan folder input dan output Jekyll:</p>
+  <pre><code>
+source: .
+destination: ./_site
+exclude: ["README.md", "node_modules"]
+include: ["custom.js"]
+  </code></pre>
+
+  <h2>8. Restart Server Setelah Ubah config.yml</h2>
+  <p>Setelah mengedit <code>_config.yml</code>, kamu harus menghentikan dan menjalankan ulang server:</p>
+  <pre><code>Ctrl + C
+bundle exec jekyll serve</code></pre>
+
+  <h2>9. Kesimpulan</h2>
+  <p>File <code>_config.yml</code> adalah pusat kontrol dari proyek Jekyll. Dengan memahami dan mengoptimalkannya, kamu bisa membangun situs statis yang profesional, fleksibel, dan sesuai dengan kebutuhan pribadi atau proyek.</p>
 
 </body>
 </html>
