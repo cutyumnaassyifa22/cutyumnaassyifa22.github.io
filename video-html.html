@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menyisipkan Video di HTML</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="friends.html">Friends</a>
+    <a href="blog.html">Blog</a>
+  </nav>
+
+  <!-- Stars Background -->
+  <div class="stars">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="card">
+    <h1>Cara Menyisipkan Video di HTML</h1>
+
+    <h2>1. Pengantar</h2>
+    <p>HTML5 memperkenalkan elemen <code>&lt;video&gt;</code> yang memungkinkan developer untuk menyisipkan dan memutar file video langsung di browser tanpa memerlukan plugin tambahan seperti Flash. Fitur ini sangat berguna untuk membagikan konten visual seperti tutorial, demo produk, vlog, dan lainnya secara langsung dalam halaman web.</p>
+
+    <h2>2. Sintaks Dasar</h2>
+    <p>Berikut adalah contoh sintaks paling dasar untuk menyisipkan video:</p>
+    <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Browser Anda tidak mendukung video HTML5.
+&lt;/video&gt;
+</code></pre>
+
+    <h2>3. Penjelasan Atribut</h2>
+    <ul>
+      <li><strong>controls</strong>: Menampilkan tombol pemutar seperti play, pause, volume, dan fullscreen.</li>
+      <li><strong>autoplay</strong>: Video akan mulai diputar secara otomatis saat halaman dimuat. Sering kali perlu dikombinasikan dengan <code>muted</code>.</li>
+      <li><strong>loop</strong>: Setelah selesai diputar, video akan otomatis diulang dari awal.</li>
+      <li><strong>muted</strong>: Memulai video dalam keadaan tanpa suara. Umumnya digunakan bersama autoplay.</li>
+      <li><strong>poster</strong>: Gambar pratinjau yang ditampilkan sebelum video dimainkan.</li>
+      <li><strong>width</strong> dan <strong>height</strong>: Ukuran dimensi tampilan video dalam piksel.</li>
+      <li><strong>preload</strong>: Mengatur seberapa banyak data video yang dimuat saat halaman dimuat (opsi: <code>auto</code>, <code>metadata</code>, <code>none</code>).</li>
+    </ul>
+
+    <h2>4. Contoh Lengkap</h2>
+    <p>Contoh penggunaan elemen video dengan semua atribut utama:</p>
+    <pre><code>&lt;video width="640" height="360" controls autoplay muted loop poster="thumbnail.jpg" preload="auto"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.ogv" type="video/ogg"&gt;
+  Browser Anda tidak mendukung elemen video.
+&lt;/video&gt;
+</code></pre>
+
+    <h2>5. Format Video yang Didukung</h2>
+    <p>Tidak semua browser mendukung format video yang sama, jadi disarankan untuk menyediakan beberapa format agar kompatibel dengan semua browser.</p>
+    <ul>
+      <li><strong>MP4</strong> (<code>video/mp4</code>): Format paling universal dan didukung oleh hampir semua browser modern.</li>
+      <li><strong>WebM</strong> (<code>video/webm</code>): Format terbuka yang didukung oleh Chrome, Firefox, dan Opera.</li>
+      <li><strong>Ogg</strong> (<code>video/ogg</code>): Didukung oleh Firefox dan Opera, tetapi tidak oleh Safari atau Internet Explorer.</li>
+    </ul>
+
+    <h2>6. Best Practices (Tips Tambahan)</h2>
+    <ul>
+      <li><strong>Gunakan kompresi video</strong> agar tidak membebani loading halaman.</li>
+      <li><strong>Letakkan video di folder khusus</strong>, misalnya <code>/assets/video/</code> untuk menjaga kerapihan proyek.</li>
+      <li><strong>Sediakan fallback text</strong> agar pengguna tetap mendapat informasi jika browser mereka tidak mendukung elemen <code>&lt;video&gt;</code>.</li>
+      <li><strong>Pastikan format video valid</strong>, hindari format aneh yang tidak standar browser.</li>
+      <li><strong>Gunakan preload dengan bijak</strong> – <code>preload="none"</code> jika kamu tidak ingin video langsung dimuat untuk menghemat bandwidth.</li>
+    </ul>
+
+    <h2>7. Contoh Video Embedded</h2>
+    <p>Berikut contoh implementasi nyata dalam HTML:</p>
+    <video width="640" height="360" controls muted autoplay loop poster="poster.jpg">
+      <source src="video.mp4" type="video/mp4">
+      <source src="video.webm" type="video/webm">
+      Browser Anda tidak mendukung elemen video HTML5.
+    </video>
+
+    <h2>8. Kesalahan Umum yang Harus Dihindari</h2>
+    <ul>
+      <li>Tidak menyediakan format cadangan (hanya MP4, tanpa WebM atau Ogg).</li>
+      <li>Ukuran file terlalu besar tanpa dikompres.</li>
+      <li>Autoplay digunakan tanpa <code>muted</code> (bisa gagal di banyak browser modern).</li>
+      <li>Folder video tidak tertata, menyebabkan broken link.</li>
+    </ul>
+
+    <h2>9. Kesimpulan</h2>
+    <p>Menyisipkan video ke dalam halaman web dengan HTML sangat mudah berkat elemen <code>&lt;video&gt;</code>. Namun, untuk pengalaman pengguna yang optimal, kamu perlu memperhatikan format file, ukuran video, atribut penting, dan kompatibilitas browser. Dengan mengikuti praktik terbaik dan menyediakan fallback, video kamu akan dapat diakses secara luas tanpa masalah.</p>
+  </div>
+
+</body>
+</html>
